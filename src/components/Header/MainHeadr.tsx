@@ -1,11 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import {
-  faHouse,
-  faMagnifyingGlass,
-  faBell,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHouse,faMagnifyingGlass, faBell, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Drawer } from "vaul";
 import Image from "next/image";
