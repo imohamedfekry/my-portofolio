@@ -35,12 +35,10 @@ function Hero() {
           {/* النص الأول: على حافة الكوكب من الأعلى */}
           <div
             className="absolute left-0 right-0 px-4"
-            style={{ top: "calc(48.9% - 300px)" }}
+            style={{ top: "calc(50% - 300px)" }}
           >
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-extrabold text-center 
-               text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-200 pb-8"
-            >
+              className="text-4xl sm:text-5xl  lg: xl:text-7xl  font-extrabold text-center  text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-200 pb-8" >
               Designing the Future of Web
             </h1>
           </div>
