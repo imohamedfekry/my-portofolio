@@ -14,13 +14,13 @@ export default function LinkdenBanner() {
   return (
     <>
       {showBanner && (
-        <a href="#">
         <motion.div
           className="bg-gradient-to-r  z-[99999] from-[#ec4899] via-[#a855f7] to-[#6366f1] py-1 flex items-center justify-center shadow-lg relative animate-move-bg bg-[length:200%_200%]"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
+                    <a href="#">
           <AnimatedGradientText>
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -38,15 +38,15 @@ export default function LinkdenBanner() {
             </span>
             <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5 text-white" />
           </AnimatedGradientText>
+          </a>
 
           <div
             onClick={() => setShowBanner(false)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center border rounded-full cursor-pointer hover:border-white"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 p-[0.85rem] flex items-center justify-center rounded-full cursor-pointer hover:bg-indigo-400"
           >
             <FontAwesomeIcon icon={faX} />
           </div>
         </motion.div>
-        </a>
       )}
     </>
   );
