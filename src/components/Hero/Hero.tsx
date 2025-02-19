@@ -34,9 +34,8 @@ function Hero() {
 
           {/* النص الأول: على حافة الكوكب من الأعلى */}
           <div
-            className="absolute left-0 right-0 px-4"
-            style={{ top: "calc(50% - 300px)" }}
-          >
+           className="absolute left-0 right-0 px-4  top-[calc(49%-300px)]
+          ">
             <h1
               className="text-4xl md:text-5xl lg:text-[4rem] xl:text-[5.8rem]  font-extrabold text-center  text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-200 pb-8" >
               Designing the Future of Web
@@ -45,8 +44,7 @@ function Hero() {
 
           {/* النص الثاني: فوق منتصف الكوكب بقليل */}
           <div
-            className="absolute left-0 right-0 px-4"
-            style={{ top: "calc(50% - 100px)", zIndex: "11" }}
+            className="absolute left-0 right-0 px-4 top-[calc(50% - 100px) z-[999]"
           >
             <h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center 
