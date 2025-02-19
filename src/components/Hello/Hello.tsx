@@ -54,12 +54,11 @@ const Hello: React.FC<HelloProps> = ({ onEnd }) => {
     <AnimatePresence>
       {!isComplete && (
         <motion.div
-        className="fixed inset-0 bg-gradient-to-b from-[var(--gradient-from)] to-[var(--gradient-to)] text-[var(--text-color)] z-[9999999999999]"
-        // className="fixed inset-0 z-20 bg-[#000] text-[#e2e2e2]"
+        className="fixed inset-0 bg-gradient-to-b from-[var(--gradient-from)] to-[var(--gradient-to)] text-[var(--text-color)] z-[9999999999999]"      
           initial={{ y: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
           exit={{
-            y: [0, '-25%', '-100%'], // ربع المسافة أولاً، بعدين فوق خالص
-            borderRadius: ['0px', '0px', '100px'], // الأطراف تتسحب فوق
+            y: [0, '-25%', '-100%'],
+            borderRadius: ['0px', '0px', '50%'],
             transition: {
               duration: 1.5,
               ease: 'easeInOut',
