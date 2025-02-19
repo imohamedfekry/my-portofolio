@@ -54,17 +54,17 @@ const Hello: React.FC<HelloProps> = ({ onEnd }) => {
     <AnimatePresence>
       {!isComplete && (
         <motion.div
-          className="fixed inset-0 bg-gradient-to-b from-white to-gray-300 text-[#0e0d0d] z-[9999999999999]"
-          // className="fixed inset-0 z-20 bg-[#000] text-[#e2e2e2]"
+        className="fixed inset-0 bg-gradient-to-b from-[var(--gradient-from)] to-[var(--gradient-to)] text-[var(--text-color)] z-[9999999999999]"
+        // className="fixed inset-0 z-20 bg-[#000] text-[#e2e2e2]"
           initial={{ y: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
           exit={{
-            // x: '100%',
-            y: '-100%',
-            // borderBottomLeftRadius: '100px',
-            // borderBottomRightRadius: '100px',
-            // clipPath: 'circle(100% at 50% 100%)',
-            transition: { duration: 1.5, ease: 'easeInOut' },            
-          }}
+            y: [0, '-25%', '-100%'], // ربع المسافة أولاً، بعدين فوق خالص
+            borderRadius: ['0px', '0px', '100px'], // الأطراف تتسحب فوق
+            transition: {
+              duration: 1.5,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1], 
+            }}}
           transition={{ duration: 1, ease: 'easeInOut' }}
         >
           <div className="flex h-screen items-center justify-center ">

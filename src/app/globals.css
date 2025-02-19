@@ -6,13 +6,18 @@
 :root {
   --bg-color: #ffffff;      /* لون الخلفية للوضع الفاتح */
   --text-color: #000000;     /* لون النص للوضع الفاتح */
+  --gradient-from: #fffcfc;  /* بداية التدرج للوضع الفاتح */
+  --gradient-to: #d6d6d6;    /* نهاية التدرج (مثلاً gray-300) */
 }
 
 /* الوضع الداكن */
 .dark {
   --bg-color: #08080f;      /* لون الخلفية للوضع الداكن */
   --text-color: #ffffff;     /* لون النص للوضع الداكن */
+  --gradient-from: #08080f;  /* بداية التدرج للوضع الداكن (مثلاً gray-900) */
+  --gradient-to: #1b222c;    /* نهاية التدرج (مثلاً gray-800) */
 }
+
 :lang(ar) {
   font-family: var(--font-cairo), sans-serif;
 }
