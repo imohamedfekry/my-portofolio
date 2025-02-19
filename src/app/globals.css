@@ -35,14 +35,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6865f1;
+  background: var(--gradient-to);
   border-radius: 4px;
-  transition: background 0.3s ease;
 }
+
 
 @keyframes move-bg {
   0% {

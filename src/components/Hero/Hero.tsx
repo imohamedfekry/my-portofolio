@@ -26,7 +26,7 @@ function Hero() {
         refresh
       />
       <div>
-        <div className="relative h-screen flex items-center justify-center">
+        <div className="relative h-[calc(100vh-76px)] flex items-center justify-center">
           {/* عنصر الكوكب */}
           <div className="relative w-full max-w-[600px] aspect-square z-10">
             <Globe />
@@ -34,7 +34,7 @@ function Hero() {
 
           {/* النص الأول: على حافة الكوكب من الأعلى */}
           <div
-           className="absolute left-0 right-0 px-4  top-[calc(49%-300px)]
+           className="absolute left-0 right-0 px-4  top-[calc(50%-270px)] sm:top-[calc(49%-300px)]
           ">
             <h1
               className="text-4xl md:text-5xl lg:text-[4rem] xl:text-[5.8rem]  font-extrabold text-center  text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-200 pb-8" >
