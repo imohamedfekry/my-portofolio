@@ -39,7 +39,7 @@ const Hello: React.FC<HelloProps> = ({ onEnd }) => {
         handleEnd();
       }, 1510);
     }
-  }, [currentIndex]);
+  }, [currentIndex , handleEnd]);
 
   const getDuration = (index: number): number => {
     if (index < greetings.length - 1 && index !== 0) {
