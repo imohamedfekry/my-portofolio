@@ -2,21 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* الوضع الفاتح */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color: #ffffff;      /* لون الخلفية للوضع الفاتح */
+  --text-color: #000000;     /* لون النص للوضع الفاتح */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* الوضع الداكن */
+.dark {
+  --bg-color: #08080f;      /* لون الخلفية للوضع الداكن */
+  --text-color: #ffffff;     /* لون النص للوضع الداكن */
 }
 
+/* تطبيق المتغيرات على الجسم */
 body {
-  color: var(--foreground);
-  background-color: #08080f;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
