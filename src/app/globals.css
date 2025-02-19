@@ -13,12 +13,14 @@
   --bg-color: #08080f;      /* لون الخلفية للوضع الداكن */
   --text-color: #ffffff;     /* لون النص للوضع الداكن */
 }
-
+:lang(ar) {
+  font-family: var(--font-cairo), sans-serif;
+}
 /* تطبيق المتغيرات على الجسم */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
