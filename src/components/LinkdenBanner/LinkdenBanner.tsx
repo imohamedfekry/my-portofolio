@@ -20,7 +20,7 @@ export default function LinkdenBanner() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-                    <a href="#">
+                    <a  target="_blank" href="https://www.linkedin.com/in/mohamedfekryy">
           <AnimatedGradientText>
             <FontAwesomeIcon
               icon={faLinkedin}

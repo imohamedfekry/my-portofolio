@@ -57,13 +57,17 @@ const Hello: React.FC<HelloProps> = ({ onEnd }) => {
         className="fixed inset-0 bg-gradient-to-b from-[var(--gradient-from)] to-[var(--gradient-to)] text-[var(--text-color)] z-[9999999999999]"      
           initial={{ y: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
           exit={{
+            // تحريك العنصر للأعلى مع تغيير scaleY وborderRadius بحيث يبدو كأنه مسك من النص
             y: [0, '-25%', '-100%'],
-            borderRadius: ['0px', '0px', '50%'],
+            scaleY: [1, 0.8, 0],
+            borderRadius: ["0%", "25%", "50%"],
+            transformOrigin: "center",
             transition: {
               duration: 1.5,
               ease: 'easeInOut',
               times: [0, 0.5, 1], 
-            }}}
+            }
+          }}
           transition={{ duration: 1, ease: 'easeInOut' }}
         >
           <div className="flex h-screen items-center justify-center ">
