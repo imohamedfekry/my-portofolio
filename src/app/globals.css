@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* الوضع الفاتح */
 :root {
   --bg-color: #ffffff;      /* لون الخلفية للوضع الفاتح */
   --text-color: #000000;     /* لون النص للوضع الفاتح */
@@ -10,7 +9,6 @@
   --gradient-to: #d6d6d6;    /* نهاية التدرج (مثلاً gray-300) */
 }
 
-/* الوضع الداكن */
 .dark {
   --bg-color: #08080f;      /* لون الخلفية للوضع الداكن */
   --text-color: #ffffff;     /* لون النص للوضع الداكن */
@@ -21,7 +19,9 @@
 :lang(ar) {
   font-family: var(--font-cairo), sans-serif;
 }
-/* تطبيق المتغيرات على الجسم */
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--bg-color);
   color: var(--text-color);

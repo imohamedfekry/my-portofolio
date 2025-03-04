@@ -28,7 +28,6 @@ function MainHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // نتأكد من أن الثيم قد تم تحميله قبل العرض لتجنب مشاكل الـ SSR
   if (!mounted) return null;
 
   return (
@@ -60,28 +59,24 @@ function MainHeader() {
                 </figcaption>
               </figure>
               <div className="flex items-center">
-                {/* تظهر AnimatedTabs على الشاشات الأكبر */}
                 <div className="hidden sm:flex">
                   <AnimatedTabs
                     tabs={[
-                      { label: "Home", link: "/#" },
-                      { label: "About", link: "/#" },
+                      { label: "Home", link: "#home" },
+                      { label: "About", link: "#about" },
                       { label: "Portfolio", link: "/#" },
                     ]}
                   />
                 </div>
 
-                {/* فاصل عمودي */}
                 <div className="hidden md:block h-1 w-1 rounded-full bg-gray-700 dark:bg-white mx-2 "></div>
 
-                {/* زر التبديل للـ dark mode */}
                 <button
                   onClick={() => {
                     setTheme(theme === "dark" ? "light" : "dark");
                   }}
                   className="h-10 w-10 p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
                 >
-                  {/* أيقونة الشمس تظهر في الوضع الفاتح */}
                   <svg
                     className="fill-violet-700 block dark:hidden"
                     fill="currentColor"
@@ -89,7 +84,6 @@ function MainHeader() {
                   >
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                   </svg>
-                  {/* أيقونة القمر تظهر في الوضع الداكن */}
                   <svg
                     className="fill-yellow-500 hidden dark:block"
                     fill="currentColor"

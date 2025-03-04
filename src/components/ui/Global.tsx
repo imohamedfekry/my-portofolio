@@ -3,15 +3,15 @@ import { useCallback, useEffect, useRef } from "react";
 import { useMotionValue } from "framer-motion";
 
 const GLOBE_CONFIG: COBEOptions = {
-  width: 800,
-  height: 800,
+  width: 700,
+  height: 700,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
   dark: 0,
   diffuse: 0.4,
-  mapSamples: 16000,
+  mapSamples: 15000,
   mapBrightness: 1,
   baseColor: [0.95, 0.95, 0.95],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
@@ -19,7 +19,7 @@ const GLOBE_CONFIG: COBEOptions = {
   markers: [
     {
       location: [26.8206, 30.8025],
-      size: 0.1,
+      size: 0.08,
     },
   ],
 };

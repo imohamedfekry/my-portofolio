@@ -1,14 +1,15 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Globe } from "../ui/Global";
 import { Particles } from "../ui/particles";
-import { useTheme } from "next-themes"; // تأكد من تثبيت next-themes
+import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 
 function Hero() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // نتأكد من ان المكون تم تركيبه على العميل لتجنب مشاكل الـ SSR
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -26,33 +27,41 @@ function Hero() {
         refresh
       />
       <div>
-        <div className="relative h-[calc(100vh-76px)] flex items-center justify-center">
-          {/* عنصر الكوكب */}
-          <div className="relative w-full max-w-[600px] aspect-square z-10">
+        <div className="relative container mx-auto h-[calc(100vh-76px)] flex items-center justify-center">
+          <motion.div
+            className="relative w-full max-w-[600px] aspect-square z-10"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          >
             <Globe />
-          </div>
+          </motion.div>
 
-          {/* النص الأول: على حافة الكوكب من الأعلى */}
-          <div
-           className="absolute left-0 right-0 px-4  top-[calc(50%-270px)] sm:top-[calc(49%-300px)]
-          ">
-            <h1
-              className="text-4xl md:text-5xl lg:text-[4rem] xl:text-[5.8rem]  font-extrabold text-center  text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-200 pb-8" >
-              Designing the Future of Web
-            </h1>
-          </div>
-
-          {/* النص الثاني: فوق منتصف الكوكب بقليل */}
-          <div
-            className="absolute left-0 right-0 px-4 top-[calc(50% - 100px) z-[999]"
+          <motion.div
+            className="absolute left-0 right-0 px-4 top-[calc(50%-270px)] sm:top-[calc(49%-300px)]"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
           >
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center 
-                   text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-500"
+              className="text-4xl md:text-5xl lg:text-[4rem] xl:text-[5.8rem] font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-200 pb-8"
+            >
+              Designing the Future of Web
+            </h1>
+          </motion.div>
+
+          <motion.div
+            className="absolute left-0 right-0 px-4 top-[calc(50% - 100px)] z-[999]"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
+          >
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-500"
             >
               One Pixel at a Time
             </h1>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

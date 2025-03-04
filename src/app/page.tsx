@@ -1,5 +1,6 @@
 "use client";
 
+import About from "@/components/About/About";
 import MainHeadr from "@/components/Header/MainHeadr";
 import Hello from "@/components/Hello/Hello";
 import Hero from "@/components/Hero/Hero";
@@ -12,14 +13,18 @@ export default function Home() {
   };
   return (
     <>
-      {showIntro ? (
+      {/* {showIntro ? (
         <Hello onEnd={handleIntroEnd} />
       ) : (
         <>
           <MainHeadr />
           <Hero />
+          <About />
         </>
-      )}
+      )} */}
+          <MainHeadr />
+          <Hero />
+          <About />
     </>
   );
 }
