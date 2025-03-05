@@ -13,7 +13,7 @@ export default function Home() {
   };
   return (
     <>
-      {/* {showIntro ? (
+      {showIntro ? (
         <Hello onEnd={handleIntroEnd} />
       ) : (
         <>
@@ -21,10 +21,7 @@ export default function Home() {
           <Hero />
           <About />
         </>
-      )} */}
-          <MainHeadr />
-          <Hero />
-          <About />
+      )}
     </>
   );
 }
