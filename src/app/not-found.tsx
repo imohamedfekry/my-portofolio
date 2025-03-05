@@ -15,10 +15,8 @@ export default function NotFound() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[var(--bg-color)] text-[var(--text-color)] px-6 relative overflow-hidden">
-      {/* Responsive Animation Blob */}
       <div className="absolute w-[40vw] h-[40vw] max-w-96 max-h-96 bg-red-500 rounded-full blur-3xl opacity-30 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:w-80 md:h-80 animate-pulse pointer-events-none"></div>
 
-      {/* محتوى الصفحة - يجعل الزر فوق الـ Blob */}
       <div className="relative z-10 text-center">
         <h1 className="sm:text-7xl text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 drop-shadow-lg">
           404

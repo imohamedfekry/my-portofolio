@@ -8,13 +8,6 @@ import { motion } from "framer-motion";
 
 function Hero() {
   const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <>
@@ -26,10 +19,9 @@ function Hero() {
         color={theme === "dark" ? "#ffffff" : "#000000"}
         refresh
       />
-      <div>
-        <div className="relative container mx-auto h-[calc(100vh-76px)] flex items-center justify-center">
-          <motion.div
-            className="relative w-full max-w-[600px] aspect-square z-10"
+        <div className="relative container mx-auto h-[calc(100vh_-_76px)] flex items-center justify-center">
+        <motion.div
+            className="w-full max-w-[600px] aspect-square z-10"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -63,7 +55,6 @@ function Hero() {
             </h1>
           </motion.div>
         </div>
-      </div>
     </>
   );
 }

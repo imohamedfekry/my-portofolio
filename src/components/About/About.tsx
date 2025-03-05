@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import MagicText from "../ui/MagicText";
-import { motion } from "framer-motion";
+import { motion,  } from "framer-motion";
 import { SparklesText } from "../ui/startText";
 const paragraph =
   "I'm a passionate Full-Stack Developer specializing in modern web technologies like React, Next.js, and Node.js. I focus on building high-performance, scalable applications with a seamless user experience. Constantly learning and adapting to new trends, I strive to write clean, efficient code that  ";
@@ -18,7 +18,7 @@ function About() {
   >
     <SparklesText text="About Me" />
     
-    <p className="font text-3xl">
+    <p className="text-3xl">
       <MagicText value={paragraph} />
       <span className="text-[#b6b3fa] shadow-sm">{endparagraph}</span>
     </p>
