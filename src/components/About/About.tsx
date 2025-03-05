@@ -18,7 +18,7 @@ function About() {
   >
     <SparklesText text="About Me" />
     
-    <p className="text-3xl">
+    <p className="text-[1.30rem]">
       <MagicText value={paragraph} />
       <span className="text-[#b6b3fa] shadow-sm">{endparagraph}</span>
     </p>
