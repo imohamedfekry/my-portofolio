@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Globe } from "../ui/Global";
 import { Particles } from "../ui/particles";
