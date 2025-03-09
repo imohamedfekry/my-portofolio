@@ -13,11 +13,11 @@
 .dark {
   --bg-color: #0e0e18;      /* لون الخلفية للوضع الداكن */
   --text-color: #ffffff;     /* لون النص للوضع الداكن */
-  --gradient-from: #08080f;  /* بداية التدرج للوضع الداكن (مثلاً gray-900) */
+  --gradient-from: #08080f;  /* بداية التدرج للوضع الداكن */
   --gradient-to: #1b222c;    /* نهاية التدرج (مثلاً gray-800) */
 }
 .container{
-  max-width: 1050px;
+  max-width: 1160px;
 }
 :lang(ar) {
   font-family: var(--font-cairo), sans-serif;

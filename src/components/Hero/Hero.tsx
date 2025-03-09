@@ -19,7 +19,7 @@ function Hero() {
         color={theme === "dark" ? "#ffffff" : "#000000"}
         refresh
       />
-        <div className="relative container mx-auto h-[calc(100vh_-_76px)] flex items-center justify-center">
+        <div className="relative max-w-[85rem]  mx-auto h-[calc(100vh_-_76px)] flex items-center justify-center">
         <motion.div
             className="w-full max-w-[600px] aspect-square z-10"
             initial={{ opacity: 0, y: 100 }}
