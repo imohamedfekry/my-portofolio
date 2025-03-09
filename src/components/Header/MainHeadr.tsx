@@ -34,7 +34,7 @@ function MainHeader() {
     <>
       <LinkdenBanner />
       <div className="sticky top-2 w-full z-[99999]">
-        <div className={`container mx-auto sm:px-[10%]`}>
+        <div className={`container mx-auto`}>
           <div
             className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 ${
               isBlurred ? "backdrop-blur-lg bg-[#3c3c494d] shadow-lg" : ""
@@ -114,7 +114,7 @@ function MainHeader() {
                       { icon: faEnvelope, label: "Messages" },
                     ].map((item, index) => (
                       <a href="#" key={index}>
-                        <div className="p-3 text-[#a0a0aa] hover:bg-[#282832] hover:text-white rounded-md flex items-center gap-3 transition-colors duration-200">
+                        <div className="p-3 text-[#a0a0aa] hover:bg-[#282832] hover:text-white flex items-center gap-3 transition-colors duration-200 rounded-lg">
                           <FontAwesomeIcon
                             className="text-lg"
                             icon={item.icon}

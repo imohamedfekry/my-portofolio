@@ -27,7 +27,8 @@ export default {
   		animation: {
   			gradient: 'gradient 8s linear infinite',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
-  			shine: 'shine var(--duration) infinite linear'
+  			shine: 'shine var(--duration) infinite linear',
+			rippling: "rippling var(--duration) ease-out"
   		},
   		keyframes: {
   			gradient: {

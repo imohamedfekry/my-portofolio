@@ -3,6 +3,7 @@ import React from "react";
 import MagicText from "../ui/MagicText";
 import { motion,  } from "framer-motion";
 import { SparklesText } from "../ui/startText";
+// import { TextReveal } from "../ui/test";
 const paragraph =
   "I'm a passionate Full-Stack Developer specializing in modern web technologies like React, Next.js, and Node.js. I focus on building high-performance, scalable applications with a seamless user experience. Constantly learning and adapting to new trends, I strive to write clean, efficient code that  ";
 const endparagraph = "Every line of code brings an idea to life";
@@ -23,7 +24,7 @@ function About() {
       <span className="text-[#b6b3fa] shadow-sm">{endparagraph}</span>
     </p>
   </motion.div>
-  
+  {/* <TextReveal>{paragraph}</TextReveal>; */}
 </section>
 
   );

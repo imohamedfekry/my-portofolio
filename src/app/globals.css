@@ -3,19 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #ffffff;      /* لون الخلفية للوضع الفاتح */
-  --text-color: #000000;     /* لون النص للوضع الفاتح */
-  --gradient-from: #fffcfc;  /* بداية التدرج للوضع الفاتح */
-  --gradient-to: #d6d6d6;    /* نهاية التدرج (مثلاً gray-300) */
+  --bg-color: #ffffff;     
+  --text-color: #000000;    
+  --gradient-from: #fffcfc; 
+  --gradient-to: #d6d6d6;    
+  --radius : 5px
 }
 
 .dark {
-  --bg-color: #08080f;      /* لون الخلفية للوضع الداكن */
+  --bg-color: #0e0e18;      /* لون الخلفية للوضع الداكن */
   --text-color: #ffffff;     /* لون النص للوضع الداكن */
   --gradient-from: #08080f;  /* بداية التدرج للوضع الداكن (مثلاً gray-900) */
   --gradient-to: #1b222c;    /* نهاية التدرج (مثلاً gray-800) */
 }
-
+.container{
+  max-width: 1050px;
+}
 :lang(ar) {
   font-family: var(--font-cairo), sans-serif;
 }
