@@ -36,7 +36,7 @@ function MainHeader() {
       <LinkdenBanner />
       <div className="sticky top-2 w-full z-[99999]">
         <div className={`container mx-auto`}>
-          <div className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 ${ isBlurred ? "backdrop-blur-lg bg-[#3c3c494d] shadow-lg" : "" }`}>
+          <div className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 overflow-hidden ${ isBlurred ? "backdrop-blur-lg bg-[#3c3c494d] shadow-lg" : "" }`}>
           <ScrollProgress className="top-[99%]" />
             <div className="flex text-white items-center justify-between w-full">
               <figure className="flex items-center gap-3">
