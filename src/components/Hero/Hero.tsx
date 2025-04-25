@@ -19,7 +19,7 @@ function Hero() {
         color={theme === "dark" ? "#ffffff" : "#000000"}
         refresh
       />
-        <div className="relative max-w-[85rem]  mx-auto h-[calc(100vh_-_76px)] flex items-center justify-center">
+        <div className="relative max-w-[85rem]  mx-auto h-[calc(100vh_-_76px)] flex items-center justify-center uppercase">
         <motion.div
             className="w-full max-w-[600px] aspect-square z-10"
             initial={{ opacity: 0, y: 100 }}
@@ -30,7 +30,7 @@ function Hero() {
           </motion.div>
 
           <motion.div
-            className="absolute left-0 right-0 px-4 top-[calc(50%-270px)] sm:top-[calc(49%-300px)]"
+            className="absolute left-0 right-0 px-4 top-[calc(50%-270px)] sm:top-[calc(49%-300px)] "
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}

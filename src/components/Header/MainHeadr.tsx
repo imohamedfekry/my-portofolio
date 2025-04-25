@@ -13,6 +13,7 @@ import Image from "next/image";
 import avatar from "@/app/assets/photo.png";
 import { AnimatedTabs } from "../ui/AnimatedTabs";
 import LinkdenBanner from "../LinkdenBanner/LinkdenBanner";
+import { ScrollProgress } from "../ui/ScrollProgress ";
 
 function MainHeader() {
   const [isBlurred, setIsBlurred] = useState(false);
@@ -35,11 +36,8 @@ function MainHeader() {
       <LinkdenBanner />
       <div className="sticky top-2 w-full z-[99999]">
         <div className={`container mx-auto`}>
-          <div
-            className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 ${
-              isBlurred ? "backdrop-blur-lg bg-[#3c3c494d] shadow-lg" : ""
-            }`}
-          >
+          <div className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 ${ isBlurred ? "backdrop-blur-lg bg-[#3c3c494d] shadow-lg" : "" }`}>
+          <ScrollProgress className="top-[99%]" />
             <div className="flex text-white items-center justify-between w-full">
               <figure className="flex items-center gap-3">
                 <Image
@@ -58,7 +56,7 @@ function MainHeader() {
                   </p>
                 </figcaption>
               </figure>
-              <div className="flex items-center">
+              <div className="flex items-center uppercase">
                 <div className="hidden sm:flex">
                   <AnimatedTabs
                     tabs={[
@@ -131,6 +129,7 @@ function MainHeader() {
             </Drawer.Root>
           </div>
         </div>
+
       </div>
     </>
   );

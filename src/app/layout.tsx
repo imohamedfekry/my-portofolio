@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes"; 
 import type { Viewport } from 'next';
+import NoiseBackground from "@/components/ui/NoiseBackground";
 const poppins = localFont({
   src: "./fonts/Poppins-Black.ttf",
   variable: "--font-geist-sans",
@@ -63,18 +64,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${cairo.variable} antialiased `}
-      >
-        {/* تغليف المحتوى بـ ThemeProvider */}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${cairo.variable} antialiased `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
         >
+          <NoiseBackground />
           {children}
+
         </ThemeProvider>
       </body>
+
     </html>
   );
 }
