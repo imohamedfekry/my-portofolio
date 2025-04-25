@@ -2,7 +2,7 @@
 import React from "react";
 import MagicText from "../ui/MagicText";
 import { motion,  } from "framer-motion";
-import { SparklesText } from "../ui/startText";
+// import { SparklesText } from "../ui/startText";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 const paragraph =
   "I'm a Full-Stack Developer who enjoys building fast, reliable web apps using React Next.js, and NodeJs and NestJs. I care about writing clean code, staying up-to-date with tech, and creating smooth user experiences.";

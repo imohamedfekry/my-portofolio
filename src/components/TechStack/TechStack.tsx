@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-const paragraph =
-  "I'm a passionate Full-Stack Developer specializing in modern web technologies like React, Next.js, and Node.js. I focus on building high-performance, scalable applications with a seamless user experience. Constantly learning and adapting to new trends, I strive to write clean, efficient code that  ";
-const endparagraph = "Every line of code brings an idea to life";
+// const paragraph =
+//   "I'm a passionate Full-Stack Developer specializing in modern web technologies like React, Next.js, and Node.js. I focus on building high-performance, scalable applications with a seamless user experience. Constantly learning and adapting to new trends, I strive to write clean, efficient code that  ";
+// const endparagraph = "Every line of code brings an idea to life";
 
 function TechStack() {
   return (
