@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes"; 
 import type { Viewport } from 'next';
 import NoiseBackground from "@/components/ui/NoiseBackground";
+import LenisProvider from "@/components/ui/LenisProvider";
 const poppins = localFont({
   src: "./fonts/Poppins-Black.ttf",
   variable: "--font-geist-sans",
@@ -73,7 +74,9 @@ export default function RootLayout({
           enableSystem={false}
         >
           <NoiseBackground />
-          {children}
+          <LenisProvider>
+            {children}
+          </LenisProvider>
 
         </ThemeProvider>
       </body>
