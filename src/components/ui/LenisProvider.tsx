@@ -9,11 +9,7 @@ interface LenisProviderProps {
 }
 
 const LenisProvider: React.FC<LenisProviderProps> = ({ children }) => {
-  const lenis = useLenis(({
-    scroll
-  }: { // Explicitly define type for scroll
-    scroll: number;
-  }) => {
+  useLenis(() => {
     // console.log('Scroll event:', scroll);
   });
 
