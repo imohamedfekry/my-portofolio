@@ -6,12 +6,12 @@ const GLOBE_CONFIG: COBEOptions = {
   width: 400,
   height: 400,
   onRender: () => {},
-  devicePixelRatio: 2,
+  devicePixelRatio: 1,
   phi: 0,
   theta: 0.3,
   dark: 0,
-  diffuse: 0.4,
-  mapSamples: 15000,
+  diffuse: 0.2,
+  mapSamples: 16000,
   mapBrightness: 1,
   baseColor: [0.95, 0.95, 0.95],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
@@ -19,7 +19,7 @@ const GLOBE_CONFIG: COBEOptions = {
   markers: [
     {
       location: [26.8206, 28.99],
-      size: 0.08,
+      size: 0.1,
     },
   ],
 };
@@ -57,8 +57,8 @@ export const Globe = ({
     (state: Record<string, unknown>) => {
       if (!pointerInteracting.current) phiRef.current -= 0.002;
       state.phi = phiRef.current + r.get();
-      state.width = widthRef.current * 2;
-      state.height = widthRef.current * 2;
+      state.width = widthRef.current;
+      state.height = widthRef.current;
     },
     [r]
   );
@@ -76,8 +76,8 @@ export const Globe = ({
 
     const globe = createGlobe(canvasRef.current!, {
       ...config,
-      width: widthRef.current * 2,
-      height: widthRef.current * 2,
+      width: widthRef.current,
+      height: widthRef.current,
       onRender,
     });
 

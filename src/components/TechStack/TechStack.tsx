@@ -1,18 +1,38 @@
 "use client";
 import React from "react";
-// const paragraph =
-//   "I'm a passionate Full-Stack Developer specializing in modern web technologies like React, Next.js, and Node.js. I focus on building high-performance, scalable applications with a seamless user experience. Constantly learning and adapting to new trends, I strive to write clean, efficient code that  ";
-// const endparagraph = "Every line of code brings an idea to life";
-
 function TechStack() {
   return (
-    <section id="about" className="container mx-auto text-center mt-28">
-      {/* <h3 className="text-6xl font-bold text-center text-black dark:text-white leading-none">
-        My Tech Stack
-      </h3>
-      <p className="text-lg text-center text-[#8b89c2] dark:text-[#b6b3fa]">
-      Technologies I work with
-      </p> */}
+    <section id="about" className="container mx-auto text-center mt-28 mb-3">
+      <div>
+        <h3 className="text-4xl font-bold text-center text-transparent bg-clip-text origin-left bg-gradient-to-r from-[var(--secondary-text-color)] via--[var(--three-text-color)] to-[var(--three-text-color)]   dark:to-[var(--text-color)] leading-none">
+          My Skills
+        </h3>
+        <p className="text-[1.22rem] max-w-[63%] m-auto text--(var(--text-color))">
+          i put your ideas and thus your wishes in the from of a unique web
+          project that inspires you and your customers
+        </p>
+      </div>
+      <div className="flex flex-row flex-wrap">
+        <div className="w-1/6">
+          <div className="m-2 bg-slate-800 rounded-md">asd</div>
+        </div>
+        <div className="w-1/6">
+          <div className="m-2 bg-slate-800 rounded-md">asd</div>
+        </div>
+        <div className="w-1/6">
+          <div className="m-2 bg-slate-800 rounded-md">asd</div>
+        </div>
+        <div className="w-1/6">
+          <div className="m-2 bg-slate-800 rounded-md">asd</div>
+        </div>
+        <div className="w-1/6">
+          <div className="m-2 bg-slate-800 rounded-md">asd</div>
+        </div>
+
+        <div className="w-1/6">
+          <div className="m-2 bg-slate-800 rounded-md">asd</div>
+        </div>
+      </div>
     </section>
   );
 }
