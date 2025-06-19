@@ -29,19 +29,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Portfolio App",
+  title: "Fullstack Portofolio",
   description: "Front End Developer Portfolio",
   keywords: "Front End Developer, Portfolio, Web Development",
   openGraph: {
     title: "Portfolio App",
-    description: "Front End Developer Portfolio",
-    site_name: "Mohamed Portfolio",
+    description: "FullStack Developer Portfolio",
+    site_name: "Mohamed Fekry Portfolio",
     themeColor: "#6366f1",
     type: "website",
-    url: "https://0dev.vercel.app/",
+    url: "https://bytefolio.vercel.app",
     images: [
       {
-        url: "https://res.cloudinary.com/difez8gdw/image/upload/v1739921112/photo_ypwsqd.png",
+        url: "https://res.cloudinary.com/difez8gdw/image/upload/v1750365847/New_Bitmap_image_-_Copy_ldc8br.png",
         width: 800,
         height: 600,
         alt: "Portfolio Preview Image",
@@ -51,9 +51,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portfolio App",
-    description: "Front End Developer Portfolio",
+    description: "FullStack Developer Portfolio",
     images: [
-      "https://res.cloudinary.com/difez8gdw/image/upload/v1739921112/photo_ypwsqd.png",
+      "https://res.cloudinary.com/difez8gdw/image/upload/v1750365847/New_Bitmap_image_-_Copy_ldc8br.png",
     ],
   },
 };
@@ -65,6 +65,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/photo.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${cairo.variable} antialiased`}
         suppressHydrationWarning
