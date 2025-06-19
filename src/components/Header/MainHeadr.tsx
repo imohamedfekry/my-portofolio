@@ -49,7 +49,7 @@ function MainHeader() {
                 />
                 <figcaption>
                   <h1 className="text-sm font-semibold text-gray-600 dark:text-gray-50">
-                    Mohamed Mohamed
+                    Mohamed Fekry
                   </h1>
                   <p className="text-gray-700 dark:text-gray-400 ">
                     FullStack Developer
