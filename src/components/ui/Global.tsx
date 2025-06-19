@@ -1,5 +1,5 @@
 import createGlobe, { COBEOptions } from "cobe";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useMotionValue } from "framer-motion";
 
 const GLOBE_CONFIG: COBEOptions = {
@@ -37,6 +37,11 @@ export const Globe = ({
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
   const r = useMotionValue(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value;
@@ -71,6 +76,8 @@ export const Globe = ({
   };
 
   useEffect(() => {
+    if (!isMounted) return;
+    
     window.addEventListener("resize", onResize);
     onResize();
 
@@ -91,7 +98,16 @@ export const Globe = ({
       window.removeEventListener("resize", onResize);
       globe.destroy();
     };
-  }, [config, onRender]);
+  }, [config, onRender, isMounted]);
+
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return (
+      <div className={`aspect-[1/1] w-full max-w-[600px] ${className}`}>
+        <canvas className="h-full w-full opacity-0 flex justify-center items-center" />
+      </div>
+    );
+  }
 
   return (
     <div className={`aspect-[1/1] w-full max-w-[600px] ${className}`}>

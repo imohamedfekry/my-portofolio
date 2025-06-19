@@ -14,6 +14,7 @@ const greetings = [
   { text: '안녕하세요', language: 'Korean' },
   { text: 'Hallo', language: 'German' },
 ];
+
 type HelloProps = {
   onEnd?: () => void;
 };
@@ -21,12 +22,20 @@ type HelloProps = {
 const Hello: React.FC<HelloProps> = ({ onEnd }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
-// now (onEnd) not use but dont remove it
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Handle client-side mounting to prevent hydration mismatch
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const handleEnd = useCallback(() => {
     if (onEnd) onEnd();
   }, [onEnd]);
 
   useEffect(() => {
+    if (!isMounted) return;
+    
     if (currentIndex < greetings.length) {
       const timer = setTimeout(() => {
         setCurrentIndex(currentIndex + 1);
@@ -39,7 +48,7 @@ const Hello: React.FC<HelloProps> = ({ onEnd }) => {
         handleEnd();
       }, 1510);
     }
-  }, [currentIndex , handleEnd]);
+  }, [currentIndex, handleEnd, isMounted]);
 
   const getDuration = (index: number): number => {
     if (index < greetings.length - 1 && index !== 0) {
@@ -49,12 +58,16 @@ const Hello: React.FC<HelloProps> = ({ onEnd }) => {
     }
   };
 
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return null;
+  }
+
   return (
-    
     <AnimatePresence>
       {!isComplete && (
         <motion.div
-        className="fixed inset-0 bg-gradient-to-b from-[var(--gradient-from)] to-[var(--gradient-to)] z-[9999999999999]"      
+          className="fixed inset-0 bg-gradient-to-b from-[var(--gradient-from)] to-[var(--gradient-to)] z-[9999999999999]"      
           initial={{ y: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
           exit={{
             y: [0, '-25%', '-100%'],

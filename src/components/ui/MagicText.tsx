@@ -7,7 +7,7 @@ interface MagicTextProps {
 }
 
 const MagicText: React.FC<MagicTextProps> = ({ value }) => {
-  const element = useRef<HTMLParagraphElement | null>(null);
+  const element = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: element,
     offset: ["start 0.9", "start 0.25"],
@@ -16,7 +16,7 @@ const MagicText: React.FC<MagicTextProps> = ({ value }) => {
   const letters = value.split("");
 
   return (
-    <motion.p
+    <motion.div
       className="relative leading-[1.6] overflow-hidden"
       ref={element}
       initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const MagicText: React.FC<MagicTextProps> = ({ value }) => {
           </Letter>
         );
       })}
-    </motion.p>
+    </motion.div>
   );
 };
 

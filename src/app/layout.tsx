@@ -64,23 +64,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${cairo.variable} antialiased `}>
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${cairo.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
+          disableTransitionOnChange
+          storageKey="portfolio-theme"
         >
           <NoiseBackground />
           <LenisProvider>
             {children}
           </LenisProvider>
-
         </ThemeProvider>
       </body>
-
     </html>
   );
 }

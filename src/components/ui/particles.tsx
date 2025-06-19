@@ -19,8 +19,15 @@ function MousePosition(): MousePosition {
     x: 0,
     y: 0,
   });
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+    
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
@@ -30,7 +37,7 @@ function MousePosition(): MousePosition {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMounted]);
 
   return mousePosition;
 }
@@ -108,9 +115,14 @@ export const Particles: React.FC<ParticlesProps> = ({
   const mousePosition = MousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+  const [isMounted, setIsMounted] = useState(false);
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
   const rafID = useRef<number | null>(null);
   const resizeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const rgb = React.useMemo(() => hexToRgb(color), [color]);
 
@@ -260,6 +272,8 @@ export const Particles: React.FC<ParticlesProps> = ({
   }, [clearContext, circles, canvasSize, remapValue, vx, vy, mouse, staticity, ease, drawCircle, circleParams, rafID]);
 
   useEffect(() => {
+    if (!isMounted) return;
+    
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext("2d");
     }
@@ -286,15 +300,31 @@ export const Particles: React.FC<ParticlesProps> = ({
       }
       window.removeEventListener("resize", handleResize);
     };
-  }, [color, initCanvas, animate, resizeTimeout, rafID, context]);
+  }, [color, initCanvas, animate, resizeTimeout, rafID, context, isMounted]);
 
   useEffect(() => {
+    if (!isMounted) return;
     onMouseMove();
-  }, [mousePosition.x, mousePosition.y, onMouseMove]);
+  }, [mousePosition.x, mousePosition.y, onMouseMove, isMounted]);
 
   useEffect(() => {
+    if (!isMounted) return;
     initCanvas();
-  }, [refresh, initCanvas]);
+  }, [refresh, initCanvas, isMounted]);
+
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return (
+      <div
+        className={cn("pointer-events-none", className)}
+        ref={canvasContainerRef}
+        aria-hidden="true"
+        {...props}
+      >
+        <canvas ref={canvasRef} className="size-full" />
+      </div>
+    );
+  }
 
   return (
     <div
