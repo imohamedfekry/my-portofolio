@@ -25,10 +25,10 @@ function About() {
               transition={{ duration: 0.8 }}
               className="mt-8"
             >
-              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-800 leading-relaxed mb-8">
                 {paragraph}
               </p>
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+              <div className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-800">
                 <MagicText value={endparagraph} />
               </div>
             </motion.div>

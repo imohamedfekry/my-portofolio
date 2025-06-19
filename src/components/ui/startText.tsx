@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, easeInOut } from "framer-motion";
+import { SparklesText } from "./sparkles-text";
 
 interface ScrollTunnelProps {
   word: string;
@@ -32,7 +33,8 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
       className="relative overflow-hidden"
       style={{
         backgroundColor: colors?.background,
-        height: "300vh",
+        minHeight: "200vh",
+        // paddingBottom: "10vh",
       }}
     >
       {/* الكلمة الكبيرة */}
@@ -47,7 +49,9 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
             className="text-[15vw] font-black leading-none whitespace-nowrap"
             style={{ color: 'var(--text-color)' }}
           >
+            <SparklesText>
             {word}
+            </SparklesText>
             <br />
           </h1>
         </motion.div>
