@@ -26,6 +26,7 @@ export default {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shine: "shine var(--duration) infinite linear",
         rippling: "rippling var(--duration) ease-out",
+        meteor: "meteor var(--meteor-duration, 4s) linear infinite",
       },
       keyframes: {
         gradient: {
@@ -43,6 +44,10 @@ export default {
           to: {
             "background-position": "0% 0%",
           },
+        },
+        meteor: {
+          '0%': { transform: 'translateY(0) translateX(0)' },
+          '100%': { transform: 'translateY(120vh) translateX(60vw)' },
         },
       },
     },

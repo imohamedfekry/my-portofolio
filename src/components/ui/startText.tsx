@@ -3,6 +3,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, easeInOut } from "framer-motion";
 import { SparklesText } from "./sparkles-text";
+import { useTheme } from "next-themes";
+import { Particles } from "./particles";
 
 interface ScrollTunnelProps {
   word: string;
@@ -26,6 +28,7 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
 
   // دمج توقيت التكبير والاختفاء والتوسعة معًا
   const scale = useTransform(scrollYProgress, [0, 0.9], [1, 150], { ease: easeInOut });
+  const { theme } = useTheme();
 
   return (
     <section
@@ -37,6 +40,16 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
         // paddingBottom: "10vh",
       }}
     >
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={40}
+        color={theme === "dark" ? "#ffffff" : "#000000"}
+        refresh
+      />
+
+      <div className="absolute inset-0 pointer-events-none z-0">
+      </div>
       {/* الكلمة الكبيرة */}
       <div className="sticky top-0 h-screen flex items-center justify-center pointer-events-none z-10">
         <motion.div
@@ -50,7 +63,7 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
             style={{ color: 'var(--text-color)' }}
           >
             <SparklesText>
-            {word}
+              {word}
             </SparklesText>
             <br />
           </h1>
@@ -60,7 +73,7 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
   );
 };
 
-// example use 
+// example use
 // <ScrollTunnel word="ABOUT ME">
 //     <h1>hi</h1>
 // </ScrollTunnel>

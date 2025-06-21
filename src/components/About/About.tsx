@@ -10,8 +10,10 @@ const paragraph =
 const endparagraph = "Every line of code brings an idea to life";
 
 function About() {
+
   return (
     <>
+
       <ScrollTunnel word="ABOUT ME"  />
       
       {/* About Content Section */}
