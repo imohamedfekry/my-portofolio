@@ -15,13 +15,8 @@ const HorizontalScrollCarouselSkills = () => {
   const [shouldScroll, setShouldScroll] = useState(true);
 
   const EDGE_MARGIN = 32;
-  const CARD_WIDTH = 220; // نفس حجم البطاقة
   const SECTION_MIN = 120; // vh
   const SECTION_MAX = 300; // vh
-  const sectionHeight = Math.min(
-    Math.max(SECTION_MIN, cards.length * 18),
-    SECTION_MAX
-  );
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
