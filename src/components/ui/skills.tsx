@@ -1,5 +1,5 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 
 // عرف نوع بيانات البطاقة
 interface CardType {
@@ -8,22 +8,59 @@ interface CardType {
   id: number;
 }
 
-
 const HorizontalScrollCarouselSkills = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const [maxTranslate, setMaxTranslate] = useState(0);
+  const [shouldScroll, setShouldScroll] = useState(true);
+
+  const EDGE_MARGIN = 32;
+  const CARD_WIDTH = 220; // نفس حجم البطاقة
+  const SECTION_MIN = 120; // vh
+  const SECTION_MAX = 300; // vh
+  const sectionHeight = Math.min(
+    Math.max(SECTION_MIN, cards.length * 18),
+    SECTION_MAX
+  );
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
+  useLayoutEffect(() => {
+    const update = () => {
+      if (!sliderRef.current || !targetRef.current) return;
+      const sliderWidth = sliderRef.current.scrollWidth;
+      const containerWidth = targetRef.current.offsetWidth;
+      const diff = sliderWidth - containerWidth + EDGE_MARGIN * 2;
+      setMaxTranslate(diff > 0 ? diff : 0);
+      setShouldScroll(diff > 0);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], shouldScroll ? [EDGE_MARGIN, -maxTranslate + EDGE_MARGIN] : [EDGE_MARGIN, EDGE_MARGIN]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-[var(--text-color)]">
+    <section
+      ref={targetRef}
+      className={`relative bg-[var(--text-color)]`}
+      style={{ height: `min(${SECTION_MAX}vh, max(${SECTION_MIN}vh, ${cards.length * 18}vh))` }}
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
+        <motion.div
+          ref={sliderRef}
+          style={{ x }}
+          className="flex gap-2"
+          transition={{ type: "spring", stiffness: 80, damping: 20 }}
+        >
+          <div style={{ minWidth: EDGE_MARGIN }} />
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
+          <div style={{ minWidth: EDGE_MARGIN }} />
         </motion.div>
       </div>
     </section>
