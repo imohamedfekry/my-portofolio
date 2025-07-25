@@ -18,7 +18,7 @@ function About() {
       <ScrollTunnel word="ABOUT ME"  /> 
       <HorizontalScrollCarouselSkills />
       {/* About Content Section */}
-        <section className="relative z-20 min-h-screen flex items-center justify-center bg-[var(--text-color)]">
+        <section className="relative z-20 min-h-screen flex items-center justify-center bg-[var(-bg--color)]">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <SectionTitle badge="About" title="About Me" />
