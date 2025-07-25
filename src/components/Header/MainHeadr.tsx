@@ -36,9 +36,20 @@ function MainHeader() {
       <LinkdenBanner />
       <div className="sticky top-2 w-full z-[99999]">
         <div className={`container mx-auto`}>
-          <div className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 overflow-hidden ${ isBlurred ? "backdrop-blur-lg bg-[#3c3c494d] shadow-lg" : "" }`}>
-          <ScrollProgress className="top-[99%]" />
-            <div className="flex text-white items-center justify-between w-full">
+          <div className={`flex justify-between items-center p-2 px-4 my-2 rounded-[100px] transition-all duration-300 overflow-hidden relative ${
+            isBlurred 
+              ? "liquidGlass-wrapper shadow-[0_6px_6px_rgba(0,0,0,0.2),0_0_20px_rgba(0,0,0,0.1)]" 
+              : ""
+          }`}>
+            {isBlurred && (
+              <>
+                <div className="liquidGlass-effect absolute inset-0 z-0 backdrop-blur-[3px] overflow-hidden isolation-isolate rounded-[100px]" style={{ filter: 'url(#glass-distortion)' }}></div>
+                <div className="liquidGlass-tint absolute inset-0 z-[1] bg-[rgba(255,255,255,0.25)] rounded-[100px]"></div>
+                <div className="liquidGlass-shine absolute inset-0 z-[2] overflow-hidden rounded-[100px] shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.5)]"></div>
+                <div className="absolute inset-0 z-[1] bg-[#3c3c494d] backdrop-blur-[5px] rounded-[100px]"></div>
+              </>
+            )}
+            <div className="flex text-white items-center justify-between w-full relative z-[3] liquidGlass-text">
               <figure className="flex items-center gap-3">
                 <Image
                   src={avatar}
@@ -96,6 +107,7 @@ function MainHeader() {
                 </button>
               </div>
             </div>
+            <ScrollProgress className="absolute top-[97%] left-0 right-0 h-1 z-[4]" />
             <Drawer.Root modal={false}>
               <Drawer.Trigger className="sm:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#3c3c494d] backdrop-blur-md text-white">
                 <span className="text-xl">☰</span>
@@ -130,6 +142,57 @@ function MainHeader() {
           </div>
         </div>
 
+        {/* SVG Filter for Glass Distortion */}
+        <svg style={{ display: 'none' }}>
+          <filter
+            id="glass-distortion"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            filterUnits="objectBoundingBox"
+          >
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.01 0.01"
+              numOctaves="1"
+              seed="5"
+              result="turbulence"
+            />
+            <feComponentTransfer in="turbulence" result="mapped">
+              <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+              <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+              <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+            </feComponentTransfer>
+            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feSpecularLighting
+              in="softMap"
+              surfaceScale="5"
+              specularConstant="1"
+              specularExponent="100"
+              lighting-color="white"
+              result="specLight"
+            >
+              <fePointLight x="-200" y="-200" z="300" />
+            </feSpecularLighting>
+            <feComposite
+              in="specLight"
+              operator="arithmetic"
+              k1="0"
+              k2="1"
+              k3="1"
+              k4="0"
+              result="litImage"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="softMap"
+              scale="100"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+        </svg>
       </div>
     </>
   );
