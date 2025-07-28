@@ -85,79 +85,79 @@ export default HorizontalScrollCarouselSkills;
 
 // عرف مصفوفة البطاقات بالنوع الصحيح
 const cards: CardType[] = [
+  // Frontend Technologies
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
-    title: "Node.js",
+    url: "/skills/react-original.svg",
+    title: "React.js",
     id: 1,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+    url: "/skills/nextjs-original.svg",
     title: "Next.js",
     id: 2,
   },
   {
-    url: "https://img.icons8.com/color/240/nestjs.png",
-    title: "NestJS",
+    url: "/skills/typescript-original.svg",
+    title: "TypeScript",
     id: 3,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
-    title: "React.js",
+    url: "/skills/tailwindcss-original.svg",
+    title: "Tailwind CSS",
     id: 4,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
-    title: "MongoDB",
+    url: "/skills/redux-original.svg",
+    title: "Redux",
     id: 5,
   },
+  
+  // Backend Technologies
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
-    title: "Express.js",
+    url: "/skills/nodejs-original.svg",
+    title: "Node.js",
     id: 6,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
-    title: "Redux",
+    url: "/skills/express-original.svg",
+    title: "Express.js",
     id: 7,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
-    title: "TypeScript",
+    url: "/skills/nestjs.png",
+    title: "NestJS",
     id: 8,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-    title: "JavaScript",
+    url: "/skills/mongodb-original.svg",
+    title: "MongoDB",
     id: 9,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
-    title: "HTML5",
+    url: "/skills/graphql-plain.svg",
+    title: "GraphQL",
     id: 10,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
-    title: "CSS3",
+    url: "/skills/socketio-original.svg",
+    title: "Socket.io",
     id: 11,
   },
+  
+  // DevOps & Tools
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
-    title: "Tailwind CSS",
+    url: "/skills/docker-original.svg",
+    title: "Docker",
     id: 12,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg",
-    title: "Docker",
+    url: "/skills/git-original.svg",
+    title: "Git", 
     id: 13,
   },
   {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg",
-    title: "Git", 
-    id: 14,
-  },
-  {
-    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
+    url: "/skills/github-original.svg",
     title: "GitHub",
-    id: 15,
+    id: 14,
   },
 ];

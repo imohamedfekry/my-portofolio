@@ -46,7 +46,7 @@ function MainHeader() {
                 <div className="liquidGlass-effect absolute inset-0 z-0 backdrop-blur-[3px] overflow-hidden isolation-isolate rounded-[100px]" style={{ filter: 'url(#glass-distortion)' }}></div>
                 <div className="liquidGlass-tint absolute inset-0 z-[1] bg-[rgba(255,255,255,0.25)] rounded-[100px]"></div>
                 <div className="liquidGlass-shine absolute inset-0 z-[2] overflow-hidden rounded-[100px] shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.5)]"></div>
-                <div className="absolute inset-0 z-[1] bg-[#3c3c494d] backdrop-blur-[5px] rounded-[100px]"></div>
+                <div className="absolute inset-0 z-[1] bg-[#40404d2a] backdrop-blur-[2px] rounded-[100px]"></div>
               </>
             )}
             <div className="flex text-white items-center justify-between w-full relative z-[3] liquidGlass-text">
@@ -109,7 +109,7 @@ function MainHeader() {
             </div>
             <ScrollProgress className="absolute top-[97%] left-0 right-0 h-1 z-[4]" />
             <Drawer.Root modal={false}>
-              <Drawer.Trigger className="sm:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#3c3c494d] backdrop-blur-md text-white">
+              <Drawer.Trigger className="sm:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#3c3c494d] backdrop-blur-md text-white relative z-[10]">
                 <span className="text-xl">☰</span>
               </Drawer.Trigger>
               <Drawer.Portal>
@@ -164,13 +164,13 @@ function MainHeader() {
               <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
               <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
             </feComponentTransfer>
-            <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+            <feGaussianBlur in="turbulence" stdDeviation="1" result="softMap" />
             <feSpecularLighting
               in="softMap"
-              surfaceScale="5"
-              specularConstant="1"
-              specularExponent="100"
-              lighting-color="white"
+              surfaceScale="2"
+              specularConstant="0.6"
+              specularExponent="30"
+              lightingColor="white"
               result="specLight"
             >
               <fePointLight x="-200" y="-200" z="300" />
@@ -187,7 +187,7 @@ function MainHeader() {
             <feDisplacementMap
               in="SourceGraphic"
               in2="softMap"
-              scale="100"
+              scale="40"
               xChannelSelector="R"
               yChannelSelector="G"
             />
