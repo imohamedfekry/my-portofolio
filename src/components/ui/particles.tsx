@@ -269,7 +269,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       }
     });
     rafID.current = window.requestAnimationFrame(animate);
-  }, [clearContext, circles, canvasSize, remapValue, vx, vy, mouse, staticity, ease, drawCircle, circleParams, rafID]);
+  }, [clearContext, vx, vy, staticity, ease, drawCircle, circleParams]);
 
   useEffect(() => {
     if (!isMounted) return;

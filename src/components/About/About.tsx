@@ -1,44 +1,50 @@
 "use client";
 import React from "react";
-import MagicText from "../ui/MagicText";
-import { motion } from "framer-motion";
 import { ScrollTunnel } from "../ui/startText";
-import { SectionTitle } from "../ui/SectionTitle";
 import HorizontalScrollCarouselSkills from "../ui/skills";
-
-const paragraph =
-  "I'm a Full-Stack Developer who enjoys building fast, reliable web apps using React Next.js, and NodeJs and NestJs. I care about writing clean code, staying up-to-date with tech, and creating smooth user experiences.";
-const endparagraph = "Every line of code brings an idea to life";
-
+import MagicBento from "../ui/MagicBento";
+import LightRays from "../ui/LightRays";
 function About() {
 
   return (
     <>
-
-      <ScrollTunnel word="ABOUT ME"  /> 
+      <ScrollTunnel word="ABOUT ME" />
       <HorizontalScrollCarouselSkills />
-      {/* About Content Section */}
-        <section className="relative z-20 min-h-screen flex items-center justify-center bg-[var(-bg--color)]">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <SectionTitle badge="About" title="About Me" />
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mt-8"
-              >
-                <p className="text-lg md:text-xl text-gray-700 dark:text-gray-800 leading-relaxed mb-8">
-                  {paragraph}
-                </p>
-                <div className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-800">
-                  <MagicText value={endparagraph} />
-                </div>
-                {/* Skills Section */}
-              </motion.div>
-            </div>
-          </div>
-        </section> 
+      <div className="relative">
+
+        <div className="absolute inset-0 ">
+          <LightRays
+            raysOrigin="right"
+            raysColor="#8f78ff80"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+            className="custom-rays"
+          />
+        </div>
+
+
+        <MagicBento
+          textAutoHide={true}
+          enableStars={true}
+          enableSpotlight={true}
+          enableBorderGlow={true}
+          enableTilt={true}
+          enableMagnetism={false}
+          clickEffect={true}
+          spotlightRadius={300}
+          particleCount={12}
+          glowColor="182, 179, 250"
+
+        />
+      </div>
+
+      {/* </div> */}
+
     </>
   );
 }

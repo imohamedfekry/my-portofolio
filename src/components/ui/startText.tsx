@@ -60,7 +60,8 @@ export const ScrollTunnel: React.FC<ScrollTunnelProps> = ({
         >
           <h1
             className="text-[15vw] font-black leading-none whitespace-nowrap"
-            style={{ color: 'var(--text-color)' }}
+            style={{ color: `${theme === "dark" ? "var(--text-color)" : "#0e0e18"}` }}
+          // style={{ color: 'text-[#0e0e18] dark:var(--text-color)' }}
           >
             <SparklesText>
               {word}

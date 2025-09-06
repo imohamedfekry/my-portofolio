@@ -1,5 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useLayoutEffect, useState } from "react";
+import Image from "next/image";
 
 // عرف نوع بيانات البطاقة
 interface CardType {
@@ -41,7 +42,7 @@ const HorizontalScrollCarouselSkills = () => {
   return (
     <section
       ref={targetRef}
-      className={`relative bg-[var(--text-color)]`}
+      className={`relative  bg-[#0e0e18] dark:bg-[var(--text-color)]`}
       style={{ height: `min(${SECTION_MAX}vh, max(${SECTION_MIN}vh, ${cards.length * 18}vh))` }}
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
@@ -69,11 +70,8 @@ const Card: React.FC<{ card: CardType }> = ({ card }) => {
       key={card.id}
       className="flex flex-col items-center justify-center h-[220px] w-[220px] bg-neutral-200 rounded-xl shadow-md mx-auto"
     >
-      <img
-        src={card.url}
-        alt={card.title}
-        className="w-24 h-24 object-contain mb-4 drop-shadow-lg mx-auto"
-      />
+      <Image src={card.url}   width={96}   // نفس w-24 = 96px
+  height={96} alt={card.title} className="w-24 h-24 object-contain mb-4 drop-shadow-lg mx-auto" />
       <div className="text-xl font-bold text-neutral-700 text-center">
         {card.title}
       </div>
@@ -111,7 +109,7 @@ const cards: CardType[] = [
     title: "Redux",
     id: 5,
   },
-  
+
   // Backend Technologies
   {
     url: "/skills/nodejs-original.svg",
@@ -143,7 +141,7 @@ const cards: CardType[] = [
     title: "Socket.io",
     id: 11,
   },
-  
+
   // DevOps & Tools
   {
     url: "/skills/docker-original.svg",
@@ -152,7 +150,7 @@ const cards: CardType[] = [
   },
   {
     url: "/skills/git-original.svg",
-    title: "Git", 
+    title: "Git",
     id: 13,
   },
   {

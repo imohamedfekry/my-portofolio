@@ -1,9 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, MotionProps, useScroll } from "motion/react";
+import { motion, MotionProps, useScroll } from "framer-motion";
 import React from "react";
-type ScrollProgressProps = Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>;
+type ScrollProgressProps = Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> & {
+  className?: string;
+};
 
 export const ScrollProgress = React.forwardRef<
   HTMLDivElement,

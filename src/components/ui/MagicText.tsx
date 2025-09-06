@@ -58,3 +58,7 @@ const Letter: React.FC<LetterProps> = ({ children, range, progress }) => {
 };
 
 export default MagicText;
+
+{/* <MagicText 
+value="some txt"      
+/> */}

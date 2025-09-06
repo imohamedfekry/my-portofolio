@@ -46,7 +46,7 @@ function MainHeader() {
                 <div className="liquidGlass-effect absolute inset-0 z-0 backdrop-blur-[3px] overflow-hidden isolation-isolate rounded-[100px]" style={{ filter: 'url(#glass-distortion)' }}></div>
                 <div className="liquidGlass-tint absolute inset-0 z-[1] bg-[rgba(255,255,255,0.25)] rounded-[100px]"></div>
                 <div className="liquidGlass-shine absolute inset-0 z-[2] overflow-hidden rounded-[100px] shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.5)]"></div>
-                <div className="absolute inset-0 z-[1] bg-[#40404d2a] backdrop-blur-[2px] rounded-[100px]"></div>
+                <div className="absolute inset-0 z-[1] bg-[#2f2f382a] backdrop-blur-[2px] rounded-[100px]"></div>
               </>
             )}
             <div className="flex text-white items-center justify-between w-full relative z-[3] liquidGlass-text">
