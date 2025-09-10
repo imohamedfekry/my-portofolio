@@ -9,12 +9,11 @@ function About() {
   return (
     <>
       <ScrollTunnel word="ABOUT ME" />
-      <HorizontalScrollCarouselSkills />
       <div className="relative">
 
         <div className="absolute inset-0 ">
-          <LightRays
-            raysOrigin="right"
+          {/* <LightRays
+            raysOrigin="left"
             raysColor="#8f78ff80"
             raysSpeed={1.5}
             lightSpread={0.8}
@@ -24,7 +23,7 @@ function About() {
             noiseAmount={0.1}
             distortion={0.05}
             className="custom-rays"
-          />
+          /> */}
         </div>
 
 
@@ -33,14 +32,16 @@ function About() {
           enableStars={true}
           enableSpotlight={true}
           enableBorderGlow={true}
-          enableTilt={true}
-          enableMagnetism={false}
+          enableTilt={false}
+          enableMagnetism={true}
           clickEffect={true}
-          spotlightRadius={300}
+          spotlightRadius={200}
           particleCount={12}
           glowColor="182, 179, 250"
 
         />
+              <HorizontalScrollCarouselSkills />
+
       </div>
 
       {/* </div> */}

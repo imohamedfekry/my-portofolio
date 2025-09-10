@@ -490,7 +490,7 @@ const BentoCardGrid: React.FC<{
   gridRef?: React.RefObject<HTMLDivElement | null>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section w-full px-4 py-8 select-none relative"
+    className="bento-section w-full px-4 py-8 select-none relative bg-[#0e0e18] dark:bg-[var(--text-color)]"
     style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
     ref={gridRef}
   >
@@ -541,7 +541,7 @@ const MagicBento: React.FC<BentoProps> = ({
             --glow-radius: 200px;
             --glow-color: ${glowColor};
             --border-color: #392e4e;
-            --background-dark: #060010;
+            --background-dark: #0e0e18;
             --white: hsl(0, 0%, 100%);
             --purple-primary: rgba(132, 0, 255, 1);
             --purple-glow: rgba(132, 0, 255, 0.2);
@@ -692,8 +692,8 @@ const MagicBento: React.FC<BentoProps> = ({
         />
       )}
 
-      <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive">
+      <BentoCardGrid   gridRef={gridRef}>
+        <div className="card-responsive ">
           {cardData.map((card, index) => {
                          const baseClassName = `card flex flex-col justify-between relative min-h-[280px] w-full max-w-full p-8 rounded-2xl border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,0,0,0.4)] ${
                enableBorderGlow ? 'card--border-glow' : ''
